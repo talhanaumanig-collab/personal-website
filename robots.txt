@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+Sitemap: https://talhanaumanig-collab.github.io/personal-website/sitemap.xml
