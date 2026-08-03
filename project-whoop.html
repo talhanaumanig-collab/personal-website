@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WHOOP Dashboard — Talha Sandhu</title>
+<meta name="description" content="A personal health dashboard built as a Flask PWA on top of the WHOOP API, with sports-science-backed analytics not available in the WHOOP app itself.">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="WHOOP Dashboard — Talha Sandhu">
+<meta property="og:description" content="A personal health command center with training-load and sleep-debt analytics the WHOOP app itself doesn't show.">
+<meta property="og:image" content="assets/projects/whoop/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WHOOP Dashboard — Talha Sandhu">
+<meta name="twitter:description" content="A personal health command center with training-load and sleep-debt analytics the WHOOP app itself doesn't show.">
+<meta name="twitter:image" content="assets/projects/whoop/og-image.png">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <button class="sidebar-toggle-mobile" id="sidebar-toggle" aria-label="Open menu">☰</button>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-profile">
+      <img src="assets/photo.jpg" alt="Talha Sandhu" class="sidebar-photo">
+      <div>
+        <div class="sidebar-name">Talha Sandhu</div>
+        <div class="sidebar-role"><span class="pulse-dot"></span> Building things</div>
+      </div>
+    </div>
+
+    <nav class="side-nav">
+      <a href="index.html#about" class="side-link">About</a>
+
+      <div class="side-group">
+        <span class="side-group-label">Experience</span>
+        <a href="index.html#exp-insead" class="side-link sub">INSEAD</a>
+        <a href="index.html#exp-qnb" class="side-link sub">QNB Capital</a>
+        <a href="index.html#exp-cepheid" class="side-link sub">Cepheid Seed Co.</a>
+        <a href="index.html#exp-mcr" class="side-link sub">MCR Property Group</a>
+      </div>
+
+      <div class="side-group">
+        <span class="side-group-label">Projects</span>
+        <a href="project-flood.html" class="side-link sub">🌊 Flood Risk Command Center</a>
+        <a href="project-psx.html" class="side-link sub">📈 PSX Risk Scorer</a>
+        <a href="project-whoop.html" class="side-link sub active" aria-current="page">💤 WHOOP Dashboard</a>
+      </div>
+
+      <a href="index.html#contact" class="side-link">Contact</a>
+    </nav>
+
+    <button class="theme-toggle" id="theme-toggle">◐ Toggle theme</button>
+  </aside>
+
+  <main class="content detail-page">
+
+    <a class="back-link" href="index.html#projects">&larr; Back to home</a>
+
+    <div class="detail-hero">
+      <div class="eyebrow">Project</div>
+      <h1>💤 WHOOP Dashboard</h1>
+      <p class="tagline">A personal health command center built on top of the WHOOP API, adding the sports-science analytics (training load, HRV readiness, sleep debt, correlation analysis) that the WHOOP app itself doesn't show.</p>
+    </div>
+
+    <div class="stack-row">
+      <span class="tag c5">Flask</span>
+      <span class="tag c2">PWA</span>
+      <span class="tag c3">OAuth 2.0</span>
+      <span class="tag c1">SQLite</span>
+      <span class="tag c4">Chart.js</span>
+      <span class="tag c6">WHOOP API</span>
+    </div>
+
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="label">The problem</div>
+        <p>WHOOP's own app is good at showing today's numbers, but it doesn't compute training load ratios, correlate sleep debt against next-day recovery, or explain the reasoning in plain language. Those questions matter more than any single day's score.</p>
+      </div>
+      <div class="value-card">
+        <div class="label">The approach</div>
+        <p>A Flask PWA that authenticates once via WHOOP's OAuth flow, then pulls recovery, strain, sleep, and workout data into a single view. Layers in metrics WHOOP doesn't expose: 7-day vs 28-day training load (ACWR), HRV readiness against a personal baseline, training monotony, and Pearson correlations between sleep debt and recovery.</p>
+      </div>
+      <div class="value-card">
+        <div class="label">The result</div>
+        <p>A "Mission Control" home view with a daily briefing and prioritised actions, dedicated Recovery/Sleep/Strain/Performance pages with full history charts, and a Performance Intelligence page that cites the actual sports science (Plews 2013, Gabbett 2016, Banister 1975) behind every formula. Installable to a phone home screen like a native app.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Screenshots</h2>
+    <p class="gallery-note">All screenshots below are of the live dashboard rendering my own 167-day WHOOP history, not sample data.</p>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="assets/projects/whoop/01-dashboard.png" alt="Mission Control home screen with recovery, strain, and sleep rings, a daily briefing, and priority actions" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">Mission Control</div>
+          <div class="cap-desc">The home view: recovery, strain, and sleep as live rings, a plain-language daily briefing summarising 167 days of history, and priority actions ranked by what actually matters today.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/whoop/02-recovery.png" alt="Recovery page with HRV baseline band, resting heart rate, SpO2, and full history charts" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">Recovery, full history</div>
+          <div class="cap-desc">HRV plotted against a personal baseline band rather than a generic range, alongside resting heart rate, SpO2, skin temperature, and a training readiness score exclusive to this dashboard.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/whoop/03-sleep.png" alt="Sleep page showing cumulative sleep debt, REM hit rate, deep sleep rate, and sleep performance history" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">Sleep intelligence</div>
+          <div class="cap-desc">Cumulative sleep debt tracked in hours, REM and deep sleep hit rates against thresholds, and a stated correlation coefficient between sleep performance and next-day recovery, insights not available in the WHOOP app itself.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/whoop/04-strain.png" alt="Strain and activity page with daily strain history, acute vs chronic training load chart, and sport type breakdown" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">Strain and training load</div>
+          <div class="cap-desc">Daily strain history alongside a 7-day acute vs. 28-day chronic training load chart (ACWR), plus a full sport-type breakdown across 165 logged sessions.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/whoop/05-performance.png" alt="Performance Intelligence page citing peer-reviewed sports science formulas for HRV readiness, ACWR, and training monotony" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">Performance Intelligence</div>
+          <div class="cap-desc">Every formula on this page cites its source: rMSSD-based HRV readiness (Plews et al. 2013), the ACWR sweet spot (Gabbett 2016), and the Banister impulse-response training load model, with Pearson correlations run on my own data.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/whoop/06-mobile.png" alt="Mobile PWA view of the dashboard with bottom tab navigation, installable to a phone home screen" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">Installed as a PWA</div>
+          <div class="cap-desc">Responsive down to phone width with bottom tab navigation, installable to a home screen so it opens like a native app rather than a browser tab.</div>
+        </div>
+      </div>
+    </div>
+
+    <span class="video-link disabled">▶ Watch walkthrough <span class="badge-soon">coming soon</span></span>
+
+    <div class="next-project">
+      <a href="project-psx.html">&larr; Previous: PSX Risk Scorer</a>
+      <a href="project-flood.html">Next: Flood Risk Command Center &rarr;</a>
+    </div>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

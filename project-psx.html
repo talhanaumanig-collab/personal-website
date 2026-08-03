@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSX Risk Scorer — Talha Sandhu</title>
+<meta name="description" content="A free, template-based risk scoring tool for Pakistan Stock Exchange stocks, with every sentence in the report traceable to a computed number.">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="PSX Risk Scorer — Talha Sandhu">
+<meta property="og:description" content="A free risk-scoring tool for Pakistan Stock Exchange stocks. Every sentence traceable to a computed number.">
+<meta property="og:image" content="assets/projects/psx/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PSX Risk Scorer — Talha Sandhu">
+<meta name="twitter:description" content="A free risk-scoring tool for Pakistan Stock Exchange stocks. Every sentence traceable to a computed number.">
+<meta name="twitter:image" content="assets/projects/psx/og-image.png">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <button class="sidebar-toggle-mobile" id="sidebar-toggle" aria-label="Open menu">☰</button>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-profile">
+      <img src="assets/photo.jpg" alt="Talha Sandhu" class="sidebar-photo">
+      <div>
+        <div class="sidebar-name">Talha Sandhu</div>
+        <div class="sidebar-role"><span class="pulse-dot"></span> Building things</div>
+      </div>
+    </div>
+
+    <nav class="side-nav">
+      <a href="index.html#about" class="side-link">About</a>
+
+      <div class="side-group">
+        <span class="side-group-label">Experience</span>
+        <a href="index.html#exp-insead" class="side-link sub">INSEAD</a>
+        <a href="index.html#exp-qnb" class="side-link sub">QNB Capital</a>
+        <a href="index.html#exp-cepheid" class="side-link sub">Cepheid Seed Co.</a>
+        <a href="index.html#exp-mcr" class="side-link sub">MCR Property Group</a>
+      </div>
+
+      <div class="side-group">
+        <span class="side-group-label">Projects</span>
+        <a href="project-flood.html" class="side-link sub">🌊 Flood Risk Command Center</a>
+        <a href="project-psx.html" class="side-link sub active" aria-current="page">📈 PSX Risk Scorer</a>
+        <a href="project-whoop.html" class="side-link sub">💤 WHOOP Dashboard</a>
+      </div>
+
+      <a href="index.html#contact" class="side-link">Contact</a>
+    </nav>
+
+    <button class="theme-toggle" id="theme-toggle">◐ Toggle theme</button>
+  </aside>
+
+  <main class="content detail-page">
+
+    <a class="back-link" href="index.html#projects">&larr; Back to home</a>
+
+    <div class="detail-hero">
+      <div class="eyebrow">Project</div>
+      <h1>📈 PSX Risk Scorer</h1>
+      <p class="tagline">A free risk-scoring tool for Pakistan Stock Exchange stocks that generates a full narrative report where every sentence is traceable to a number it computed, not an LLM's guess.</p>
+    </div>
+
+    <div class="stack-row">
+      <span class="tag c1">Python</span>
+      <span class="tag c4">Streamlit</span>
+      <span class="tag c6">Web Scraping</span>
+      <span class="tag c5">Plotly</span>
+      <span class="tag c2">SQLite Cache</span>
+      <span class="tag c3">Zero API Keys</span>
+    </div>
+
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="label">The problem</div>
+        <p>Retail investors on the Pakistan Stock Exchange don't have anything like a standardised risk score. Financial data is scattered across a live pricing terminal, a separate data portal for quarterly figures, and PDF annual reports, with no single source giving the full picture.</p>
+      </div>
+      <div class="value-card">
+        <div class="label">The approach</div>
+        <p>Scrapes and cross-verifies company financials from multiple official sources, catching real bugs along the way (one source reports figures in thousands, silently understating results 1000x if not rescaled). Scores each company across Valuation, Financial Health, and Growth pillars using industrial or bank-specific templates, then generates a narrative report where every sentence is assembled directly from a number the scoring engine already computed. There's nothing left to hallucinate.</p>
+      </div>
+      <div class="value-card">
+        <div class="label">The result</div>
+        <p>A live Streamlit app that builds a full report, gauge score, five-year trend, quarterly financials, catalysts, risks, and linked source documents, in under 20 seconds, entirely free to run: no LLM, no API key, no subscription.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Screenshots</h2>
+    <p class="gallery-note">All screenshots below are of a live-generated report for FFC (Fauji Fertilizer Company), pulled fresh from PSX data sources at the time they were taken.</p>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="assets/projects/psx/01-top.png" alt="PSX Risk Scorer report header showing a 66/100 moderate risk gauge, key stats, and a one-line situation summary" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">The headline score</div>
+          <div class="cap-desc">A 0 to 100 gauge score, key stats (price, 52-week range, market cap, dividend yield), and a one-line "situation" summary generated from a rule-based pattern match over the pillar scores, not AI-generated prose.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/psx/02-price-score.png" alt="Five-year price history chart and score breakdown across Valuation, Financial Health, and Growth pillars" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">Price history and score breakdown</div>
+          <div class="cap-desc">A five-year price chart sourced from PSX's own data portal, alongside the weighted breakdown across the three scoring pillars and a per-metric detail tab.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/psx/03-valuation-trend.png" alt="Valuation pillar detail explaining why each metric matters for risk, plus a five-year EPS, DPS, and ROE trend chart" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">Why each metric matters</div>
+          <div class="cap-desc">Every pillar explains its own reasoning in plain language before showing the numbers, here: why EV/EBITDA and dividend yield pull risk in opposite directions, followed by a five-year EPS/DPS/ROE trend.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/psx/04-quarterly.png" alt="Quarterly sales, profit after tax, and EPS trend chart and table sourced from PSX's data portal" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">Quarterly financials</div>
+          <div class="cap-desc">Quarterly sales, profit after tax, and EPS, a data source most tools skip since psxterminal.com only exposes annual figures. Scraped from PSX's own quarterly disclosure tables instead.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/psx/05-bottomline.png" alt="Catalysts, risks, bottom line summary, and linked source documents including audited annual reports" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">Catalysts, risks, and sources</div>
+          <div class="cap-desc">Catalysts and risks generated from the scored metrics and recent news, a bottom-line summary, and direct links to the underlying audited filings so the real source document is always one click away.</div>
+        </div>
+      </div>
+    </div>
+
+    <span class="video-link disabled">▶ Watch walkthrough <span class="badge-soon">coming soon</span></span>
+
+    <div class="next-project">
+      <a href="project-flood.html">&larr; Previous: Flood Risk Command Center</a>
+      <a href="project-whoop.html">Next: WHOOP Dashboard &rarr;</a>
+    </div>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flood Risk Command Center — Talha Sandhu</title>
+<meta name="description" content="A live flash-flood forecasting system for a farm in Punjab, Pakistan, built on the WMO Flash Flood Guidance method and backtested against 11 historical flood periods.">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Flood Risk Command Center — Talha Sandhu">
+<meta property="og:description" content="A live flash-flood forecasting system backtested against 11 historical periods, called 10 of 11 correctly.">
+<meta property="og:image" content="assets/projects/flood/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Flood Risk Command Center — Talha Sandhu">
+<meta name="twitter:description" content="A live flash-flood forecasting system backtested against 11 historical periods, called 10 of 11 correctly.">
+<meta name="twitter:image" content="assets/projects/flood/og-image.png">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <button class="sidebar-toggle-mobile" id="sidebar-toggle" aria-label="Open menu">☰</button>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-profile">
+      <img src="assets/photo.jpg" alt="Talha Sandhu" class="sidebar-photo">
+      <div>
+        <div class="sidebar-name">Talha Sandhu</div>
+        <div class="sidebar-role"><span class="pulse-dot"></span> Building things</div>
+      </div>
+    </div>
+
+    <nav class="side-nav">
+      <a href="index.html#about" class="side-link">About</a>
+
+      <div class="side-group">
+        <span class="side-group-label">Experience</span>
+        <a href="index.html#exp-insead" class="side-link sub">INSEAD</a>
+        <a href="index.html#exp-qnb" class="side-link sub">QNB Capital</a>
+        <a href="index.html#exp-cepheid" class="side-link sub">Cepheid Seed Co.</a>
+        <a href="index.html#exp-mcr" class="side-link sub">MCR Property Group</a>
+      </div>
+
+      <div class="side-group">
+        <span class="side-group-label">Projects</span>
+        <a href="project-flood.html" class="side-link sub active" aria-current="page">🌊 Flood Risk Command Center</a>
+        <a href="project-psx.html" class="side-link sub">📈 PSX Risk Scorer</a>
+        <a href="project-whoop.html" class="side-link sub">💤 WHOOP Dashboard</a>
+      </div>
+
+      <a href="index.html#contact" class="side-link">Contact</a>
+    </nav>
+
+    <button class="theme-toggle" id="theme-toggle">◐ Toggle theme</button>
+  </aside>
+
+  <main class="content detail-page">
+
+    <a class="back-link" href="index.html#projects">&larr; Back to home</a>
+
+    <div class="detail-hero">
+      <div class="eyebrow">Project</div>
+      <h1>🌊 Flood Risk Command Center</h1>
+      <p class="tagline">A live flash-flood forecasting system for a 100-acre family holding in Rajanpur, Punjab, built on the same method the WMO uses for ungauged catchments: instead of asking how much rain is coming, it asks how much rain it would actually take to flood.</p>
+    </div>
+
+    <div class="stack-row">
+      <span class="tag c1">JavaScript</span>
+      <span class="tag c5">Open-Meteo API</span>
+      <span class="tag c3">Copernicus DEM</span>
+      <span class="tag c4">Esri World Imagery</span>
+      <span class="tag c2">PDMA Punjab Flood Stages</span>
+      <span class="tag c6">WMO Flash Flood Guidance</span>
+    </div>
+
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="label">The problem</div>
+        <p>The torrents draining the Suleiman Range into this command area are ungauged: no sensor network, no official real-time discharge feed. A generic rainfall forecast is nearly useless here, because how much rain is coming matters far less than how much rain the ground can absorb before it floods.</p>
+      </div>
+      <div class="value-card">
+        <div class="label">The approach</div>
+        <p>Built on the time-area method with an SCS Curve Number loss model, the standard approach for flash flood forecasting in ungauged catchments. Delineates the 10,472 km² catchment from live Copernicus elevation, splits it into six travel-time zones, and inverts the question the WMO's Flash Flood Guidance way: how much rain would it take to flood, given today's soil moisture.</p>
+      </div>
+      <div class="value-card">
+        <div class="label">The result</div>
+        <p>Backtested against 11 historical periods, five flooded and six quiet, and called 10 of 11 correctly with zero false alarms. The one miss is shown on the page and explained rather than hidden. Live satellite and terrain overlays show which fields flood first, and every known limitation of the model is stated in plain language.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Screenshots</h2>
+    <p class="gallery-note">All screenshots below are of the live dashboard pulling real forecast, elevation, and satellite data at the time they were taken, not mockups.</p>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="assets/projects/flood/01-hero.png" alt="Current situation card showing forecast peak as a ring gauge and a plain-language all-clear explanation" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">The headline call</div>
+          <div class="cap-desc">A ring gauge showing the forecast peak as a share of the exceptional flood stage, plus the reasoning behind it in plain language, not just a number.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/flood/02-rainneeded.png" alt="How much rain would flood you today panel, showing millimetres of rain needed in 6 hours to reach each flood stage given current soil moisture" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">How much rain would flood you today</div>
+          <div class="cap-desc">The WMO Flash Flood Guidance method: instead of forecasting rainfall, it calculates exactly how much rain in the next 6 hours would push the catchment to each flood stage, adjusted for how wet the ground already is.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/flood/03-forecast.png" alt="16-day predicted flow chart plotted against official medium, high, and exceptional flood stage thresholds" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">Predicted flow reaching the land</div>
+          <div class="cap-desc">Rainfall from six upstream zones, each delayed by its own travel time then combined, plotted against Punjab's official flood stage thresholds for the Kaha torrent.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/flood/04-chain.png" alt="Live catchment relay chain showing rainfall and travel time from six zones ranging from 121km away down to the farm itself" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">Where the water is coming from</div>
+          <div class="cap-desc">The catchment as a chain, furthest upstream on the right, the farm on the left. Each link shows live rainfall there and how many hours its water takes to arrive.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/flood/05-satellite.png" alt="Live satellite imagery overlaid with a flood exposure terrain map banded by height above the nearest channel bed" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">Which parts of the land flood first</div>
+          <div class="cap-desc">Live Esri satellite imagery overlaid with a Copernicus elevation-derived exposure map, so it's clear which blocks sit low enough to flood first.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/flood/06-trackrecord.png" alt="Backtest track record table across 11 historical periods, 10 called correctly, one miss shown and explained" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">Track record, backtested</div>
+          <div class="cap-desc">The same model run against 11 historical periods, five with documented flooding and six without. 10 of 11 called correctly, zero false alarms, and the one miss shown openly rather than excluded.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/flood/07-methodology.png" alt="Table explaining the hydrology methodology: catchment delineation, travel time, isochrone zones, SCS Curve Number, unit hydrograph, and routing" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">How the forecast is built</div>
+          <div class="cap-desc">The actual hydrology underneath the dashboard: an SCS Curve Number loss model, six isochrone travel-time zones, and a triangular unit hydrograph, routed and summed hour by hour.</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/projects/flood/08-limitations.png" alt="Known limitations section listing warning ceiling, approximate catchment boundary, simplified velocity, and other honest caveats" loading="lazy" decoding="async">
+        <div class="gallery-caption">
+          <div class="cap-title">Known limitations, stated openly</div>
+          <div class="cap-desc">Every simplification the model makes, from the 21-hour warning ceiling to why the curve number isn't locally calibrated, written in plain language instead of buried in a footnote.</div>
+        </div>
+      </div>
+    </div>
+
+    <span class="video-link disabled">▶ Watch walkthrough <span class="badge-soon">coming soon</span></span>
+
+    <div class="next-project">
+      <span></span>
+      <a href="project-psx.html">Next: PSX Risk Scorer &rarr;</a>
+    </div>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
