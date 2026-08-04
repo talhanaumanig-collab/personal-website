@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://talhanaumanig-collab.github.io/personal-website/index.html</loc>
+    <loc>https://talhasandhu.com/index.html</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://talhanaumanig-collab.github.io/personal-website/project-flood.html</loc>
+    <loc>https://talhasandhu.com/project-flood.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://talhanaumanig-collab.github.io/personal-website/project-psx.html</loc>
+    <loc>https://talhasandhu.com/project-psx.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://talhanaumanig-collab.github.io/personal-website/project-whoop.html</loc>
+    <loc>https://talhasandhu.com/project-whoop.html</loc>
     <priority>0.8</priority>
   </url>
 </urlset>
