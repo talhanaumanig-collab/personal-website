@@ -487,13 +487,9 @@ a.video-link:hover {
   margin-top: 22px;
 }
 
-.card-photography { grid-column: span 2; grid-row: span 2; }
-.card-hiking       { grid-column: span 2; grid-row: span 1; }
-.card-horse        { grid-column: span 1; grid-row: span 1; }
-.card-squash       { grid-column: span 1; grid-row: span 1; }
+.card-sports       { grid-column: span 2; grid-row: span 2; }
+.card-photography  { grid-column: span 2; grid-row: span 2; }
 .card-travel       { grid-column: span 4; grid-row: span 1; }
-.card-cycling      { grid-column: span 2; grid-row: span 1; }
-.card-golf         { grid-column: span 2; grid-row: span 1; }
 
 .hobby-card {
   display: flex;
@@ -563,10 +559,15 @@ a.video-link:hover {
   grid-template-rows: 1fr;
 }
 
+.media-count-6 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+}
+
 /* Crop bias for images whose subject sits off-center */
 .card-travel .hobby-card-media img:nth-child(1) { object-position: center 62%; }
-.card-horse .hobby-card-media img { object-position: center 25%; }
-.card-cycling .hobby-card-media img { object-position: center 30%; }
+.card-sports .hobby-card-media img:nth-child(2) { object-position: center 25%; } /* horse riding */
+.card-sports .hobby-card-media img:nth-child(4) { object-position: center 30%; } /* cycling */
 
 .media-badge {
   position: absolute;
@@ -642,7 +643,7 @@ a.video-link:hover {
     grid-auto-rows: auto;
   }
 
-  .card-photography, .card-hiking, .card-horse, .card-squash, .card-travel, .card-cycling, .card-golf {
+  .card-sports, .card-photography, .card-travel {
     grid-column: span 1;
     grid-row: span 1;
   }
@@ -686,14 +687,6 @@ a.video-link:hover {
   border-radius: 10px;
   object-fit: contain;
   box-shadow: 0 24px 64px rgba(0,0,0,0.55);
-}
-
-.lightbox-figure figcaption {
-  color: #e7e7e7;
-  font-size: 14.5px;
-  text-align: center;
-  max-width: 620px;
-  padding: 0 16px;
 }
 
 .lightbox-close {

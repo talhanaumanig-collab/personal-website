@@ -68,7 +68,6 @@ if (sections.length) {
 const lightbox = document.getElementById("lightbox");
 if (lightbox) {
   const lightboxImg = document.getElementById("lightbox-img");
-  const lightboxCaption = document.getElementById("lightbox-caption");
   const lightboxCounter = document.getElementById("lightbox-counter");
   const lightboxClose = document.getElementById("lightbox-close");
   const lightboxPrev = document.getElementById("lightbox-prev");
@@ -83,7 +82,6 @@ if (lightbox) {
     const photo = currentPhotos[currentIndex];
     lightboxImg.src = photo.src;
     lightboxImg.alt = photo.alt;
-    lightboxCaption.textContent = photo.alt;
     lightboxCounter.textContent = currentPhotos.length > 1 ? `${currentIndex + 1} / ${currentPhotos.length}` : "";
     const multi = currentPhotos.length > 1;
     lightboxPrev.style.display = multi ? "flex" : "none";
