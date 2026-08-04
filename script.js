@@ -63,3 +63,71 @@ if (sections.length) {
 
   sections.forEach((section) => observer.observe(section));
 }
+
+// Hobby card lightbox
+const lightbox = document.getElementById("lightbox");
+if (lightbox) {
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxCaption = document.getElementById("lightbox-caption");
+  const lightboxCounter = document.getElementById("lightbox-counter");
+  const lightboxClose = document.getElementById("lightbox-close");
+  const lightboxPrev = document.getElementById("lightbox-prev");
+  const lightboxNext = document.getElementById("lightbox-next");
+
+  let currentPhotos = [];
+  let currentIndex = 0;
+  let lastFocused = null;
+
+  function showPhoto(i) {
+    currentIndex = (i + currentPhotos.length) % currentPhotos.length;
+    const photo = currentPhotos[currentIndex];
+    lightboxImg.src = photo.src;
+    lightboxImg.alt = photo.alt;
+    lightboxCaption.textContent = photo.alt;
+    lightboxCounter.textContent = currentPhotos.length > 1 ? `${currentIndex + 1} / ${currentPhotos.length}` : "";
+    const multi = currentPhotos.length > 1;
+    lightboxPrev.style.display = multi ? "flex" : "none";
+    lightboxNext.style.display = multi ? "flex" : "none";
+  }
+
+  function openLightbox(photos, startIndex, trigger) {
+    if (!photos.length) return;
+    currentPhotos = photos;
+    lastFocused = trigger || document.activeElement;
+    showPhoto(startIndex);
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    lightboxClose.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (lastFocused) lastFocused.focus();
+  }
+
+  document.querySelectorAll(".hobby-card").forEach((card) => {
+    const photos = Array.from(card.querySelectorAll(".hobby-card-media img")).map((img) => ({
+      src: img.getAttribute("src"),
+      alt: img.getAttribute("alt"),
+    }));
+    card.addEventListener("click", () => openLightbox(photos, 0, card));
+  });
+
+  lightboxClose.addEventListener("click", closeLightbox);
+  lightboxPrev.addEventListener("click", () => showPhoto(currentIndex - 1));
+  lightboxNext.addEventListener("click", () => showPhoto(currentIndex + 1));
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("open")) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") showPhoto(currentIndex - 1);
+    if (e.key === "ArrowRight") showPhoto(currentIndex + 1);
+  });
+}

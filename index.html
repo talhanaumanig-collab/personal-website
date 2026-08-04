@@ -176,43 +176,108 @@
 
     <section id="hobbies">
       <h2 class="section-title">Outside of Work</h2>
-      <p class="hobbies-intro">Outside of work I love to hike, horse ride, play squash, take photos, and travel with friends.</p>
+      <p class="hobbies-intro">Outside of work I love to hike, horse ride, play squash, cycle, golf, take photos, and travel with friends. Click a card to look through the photos.</p>
 
-      <div class="hobbies-grid">
-        <div class="hobby-photo">
-          <img src="assets/about/horse-riding.jpg" alt="Talha horse riding, seated on a horse inside a stable" loading="lazy" decoding="async">
-          <div class="hobby-label">Horse riding</div>
-        </div>
-        <div class="hobby-photo">
-          <img src="assets/about/squash.jpg" alt="Talha playing squash on court" loading="lazy" decoding="async">
-          <div class="hobby-label">Squash</div>
-        </div>
-        <div class="hobby-photo">
-          <img src="assets/about/hiking-2.jpg" alt="Talha hiking with a friend on a gravel trail, both smiling" loading="lazy" decoding="async">
-          <div class="hobby-label">Hiking</div>
-        </div>
-        <div class="hobby-photo">
-          <img src="assets/about/photography-1.jpg" alt="Snow-capped Karakoram peak photographed by Talha" loading="lazy" decoding="async">
-          <div class="hobby-label">Photography</div>
-        </div>
-        <div class="hobby-photo">
-          <img src="assets/about/travel-friends.jpg" alt="Talha with a group of friends on a terrace at sunset" loading="lazy" decoding="async">
-          <div class="hobby-label">Travel with friends</div>
-        </div>
-        <div class="hobby-photo">
-          <img src="assets/about/photography-2.jpg" alt="A jagged Karakoram spire emerging from clouds, photographed by Talha" loading="lazy" decoding="async">
-          <div class="hobby-label">Photography</div>
-        </div>
-        <div class="hobby-photo">
-          <img src="assets/about/hiking-1.jpg" alt="Talha hiking alone on a mountain trail with a trekking pole" loading="lazy" decoding="async">
-          <div class="hobby-label">Hiking</div>
-        </div>
-        <div class="hobby-photo">
-          <img src="assets/about/photography-3.jpg" alt="A sunlit snow-covered peak, photographed by Talha" loading="lazy" decoding="async">
-          <div class="hobby-label">Photography</div>
-        </div>
+      <div class="hobby-cards">
+
+        <button class="hobby-card card-photography" data-category="photography" aria-haspopup="dialog">
+          <div class="hobby-card-media media-count-3">
+            <img src="assets/about/photography-1.jpg" alt="Snow-capped Karakoram peak" loading="lazy" decoding="async">
+            <img src="assets/about/photography-2.jpg" alt="A jagged Karakoram spire emerging from clouds" loading="lazy" decoding="async">
+            <img src="assets/about/photography-3.jpg" alt="A sunlit snow-covered peak" loading="lazy" decoding="async">
+            <span class="media-badge">3 photos</span>
+            <span class="media-hint">View gallery &rarr;</span>
+          </div>
+          <div class="hobby-card-body">
+            <div class="hobby-card-title">📸 Photography</div>
+            <p class="hobby-card-caption">Karakoram and Himalaya peaks, shot above 4,000m on the way up.</p>
+          </div>
+        </button>
+
+        <button class="hobby-card card-hiking" data-category="hiking" aria-haspopup="dialog">
+          <div class="hobby-card-media media-count-2">
+            <img src="assets/about/hiking-2.jpg" alt="Talha hiking with a friend on a gravel trail, both smiling" loading="lazy" decoding="async">
+            <img src="assets/about/hiking-1.jpg" alt="Talha hiking alone on a mountain trail with a trekking pole" loading="lazy" decoding="async">
+            <span class="media-badge">2 photos</span>
+            <span class="media-hint">View gallery &rarr;</span>
+          </div>
+          <div class="hobby-card-body">
+            <div class="hobby-card-title">🥾 Hiking</div>
+            <p class="hobby-card-caption">Gravel roads, good company, no fixed plan.</p>
+          </div>
+        </button>
+
+        <button class="hobby-card card-horse" data-category="horse" aria-haspopup="dialog">
+          <div class="hobby-card-media media-count-1">
+            <img src="assets/about/horse-riding.jpg" alt="Talha horse riding, seated on a horse inside a stable" loading="lazy" decoding="async">
+            <span class="media-hint">View &rarr;</span>
+          </div>
+          <div class="hobby-card-body">
+            <div class="hobby-card-title">🐎 Horse riding</div>
+            <p class="hobby-card-caption">President of INSEAD's Horse Riding Club.</p>
+          </div>
+        </button>
+
+        <button class="hobby-card card-squash" data-category="squash" aria-haspopup="dialog">
+          <div class="hobby-card-media media-count-1">
+            <img src="assets/about/squash.jpg" alt="Talha playing squash on court" loading="lazy" decoding="async">
+            <span class="media-hint">View &rarr;</span>
+          </div>
+          <div class="hobby-card-body">
+            <div class="hobby-card-title">🎾 Squash</div>
+            <p class="hobby-card-caption">Weekly games, mostly for the rivalry.</p>
+          </div>
+        </button>
+
+        <button class="hobby-card card-travel" data-category="travel" aria-haspopup="dialog">
+          <div class="hobby-card-media media-count-3-wide">
+            <img src="assets/about/travel-friends.jpg" alt="Talha with a group of friends on a terrace at sunset" loading="lazy" decoding="async">
+            <img src="assets/about/travel-stadium.jpg" alt="Talha with friends at an old stadium on a trip" loading="lazy" decoding="async">
+            <img src="assets/about/travel-dinner.jpg" alt="Talha at a group dinner with friends surrounded by wine bottles" loading="lazy" decoding="async">
+            <span class="media-badge">3 photos</span>
+            <span class="media-hint">View gallery &rarr;</span>
+          </div>
+          <div class="hobby-card-body">
+            <div class="hobby-card-title">✈️ Travel with friends</div>
+            <p class="hobby-card-caption">The best stories always happen away from home.</p>
+          </div>
+        </button>
+
+        <button class="hobby-card card-cycling" data-category="cycling" aria-haspopup="dialog">
+          <div class="hobby-card-media media-count-1">
+            <img src="assets/about/cycling.jpg" alt="Talha cycling on a mountain road with snow-capped peaks behind" loading="lazy" decoding="async">
+            <span class="media-hint">View &rarr;</span>
+          </div>
+          <div class="hobby-card-body">
+            <div class="hobby-card-title">🚵 Cycling</div>
+            <p class="hobby-card-caption">Somewhere in the Karakoram, two wheels and a very long climb.</p>
+          </div>
+        </button>
+
+        <button class="hobby-card card-golf" data-category="golf" aria-haspopup="dialog">
+          <div class="hobby-card-media media-count-1">
+            <img src="assets/about/golf.jpg" alt="Talha mid swing on a golf tee, hills and trees in the background" loading="lazy" decoding="async">
+            <span class="media-hint">View &rarr;</span>
+          </div>
+          <div class="hobby-card-body">
+            <div class="hobby-card-title">⛳ Golf</div>
+            <p class="hobby-card-caption">Weekend golf. The stories are better than the scorecard.</p>
+          </div>
+        </button>
+
       </div>
     </section>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Photo gallery">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close gallery">&times;</button>
+      <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous photo">&#8249;</button>
+      <figure class="lightbox-figure">
+        <img id="lightbox-img" alt="">
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+      <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next photo">&#8250;</button>
+      <div class="lightbox-counter" id="lightbox-counter"></div>
+    </div>
 
     <section id="contact">
       <h2 class="section-title">Contact</h2>

@@ -465,55 +465,294 @@ a.video-link:hover {
 .tag.c6 { color: var(--c6); background: var(--c6-bg); }
 
 /* Hobbies / outside of work */
-.hobbies-intro {
-  margin-bottom: 20px;
+#hobbies {
+  padding: 28px 24px 32px;
+  margin-left: -24px;
+  margin-right: -24px;
+  border-radius: 16px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
 }
 
-.hobbies-grid {
+.hobbies-intro {
+  margin-bottom: 4px;
+  max-width: 560px;
+}
+
+.hobby-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-bottom: 8px;
+  grid-auto-rows: 210px;
+  gap: 14px;
+  margin-top: 22px;
 }
 
-.hobby-photo {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  border-radius: 10px;
-  overflow: hidden;
+.card-photography { grid-column: span 2; grid-row: span 2; }
+.card-hiking       { grid-column: span 2; grid-row: span 1; }
+.card-horse        { grid-column: span 1; grid-row: span 1; }
+.card-squash       { grid-column: span 1; grid-row: span 1; }
+.card-travel       { grid-column: span 4; grid-row: span 1; }
+.card-cycling      { grid-column: span 2; grid-row: span 1; }
+.card-golf         { grid-column: span 2; grid-row: span 1; }
+
+.hobby-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border: 1px solid var(--border);
-  background: var(--bg-alt);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg);
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  font-family: inherit;
+  color: inherit;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
-.hobby-photo img {
+.hobby-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.14);
+  border-color: var(--accent);
+}
+
+.hobby-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.hobby-card-media {
+  position: relative;
+  height: calc(100% - 116px);
+  flex: none;
+  overflow: hidden;
+  display: grid;
+  gap: 2px;
+  background: var(--border);
+}
+
+.hobby-card-media img {
   width: 100%;
   height: 100%;
+  min-width: 0;
+  min-height: 0;
   object-fit: cover;
   display: block;
-  transition: transform 0.35s ease;
+  transition: transform 0.4s ease;
 }
 
-.hobby-photo:hover img {
-  transform: scale(1.06);
+.hobby-card:hover .hobby-card-media img {
+  transform: scale(1.05);
 }
 
-.hobby-label {
+.media-count-1 { grid-template-columns: 1fr; grid-template-rows: 1fr; }
+
+.media-count-2 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
+
+.media-count-3 {
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.media-count-3 img:nth-child(1) { grid-column: 1; grid-row: 1 / -1; }
+.media-count-3 img:nth-child(2) { grid-column: 2; grid-row: 1; }
+.media-count-3 img:nth-child(3) { grid-column: 2; grid-row: 2; }
+
+.media-count-3-wide {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+/* Crop bias for images whose subject sits off-center */
+.card-travel .hobby-card-media img:nth-child(1) { object-position: center 62%; }
+.card-horse .hobby-card-media img { object-position: center 25%; }
+.card-cycling .hobby-card-media img { object-position: center 30%; }
+
+.media-badge {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 22px 10px 9px;
-  background: linear-gradient(to top, rgba(0,0,0,0.72), transparent);
+  top: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(3px);
   color: #fff;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.02em;
+  padding: 4px 9px;
+  border-radius: 999px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.media-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hobby-card:hover .media-hint {
+  opacity: 1;
+  background: rgba(0,0,0,0.28);
+}
+
+.hobby-card-body {
+  height: 116px;
+  padding: 14px 16px 16px;
+  flex: none;
+  overflow: hidden;
+}
+
+.hobby-card-title {
+  font-weight: 700;
+  font-size: 15.5px;
+  margin-bottom: 4px;
+}
+
+.hobby-card-caption {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @media (max-width: 700px) {
-  .hobbies-grid {
-    grid-template-columns: repeat(2, 1fr);
+  #hobbies {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 22px 20px 26px;
+    border-radius: 0;
   }
+
+  .hobby-cards {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .card-photography, .card-hiking, .card-horse, .card-squash, .card-travel, .card-cycling, .card-golf {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .hobby-card { height: auto; }
+  .hobby-card-media { height: 200px; flex: none; }
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 7, 9, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-figure {
+  max-width: min(88vw, 1000px);
+  max-height: 86vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.lightbox-figure img {
+  max-width: 100%;
+  max-height: 74vh;
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.55);
+}
+
+.lightbox-figure figcaption {
+  color: #e7e7e7;
+  font-size: 14.5px;
+  text-align: center;
+  max-width: 620px;
+  padding: 0 16px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-close:hover { background: rgba(255,255,255,0.18); }
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-nav:hover { background: rgba(255,255,255,0.18); }
+.lightbox-prev { left: 16px; }
+.lightbox-next { right: 16px; }
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #bbb;
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 700px) {
+  .lightbox-nav { width: 40px; height: 40px; font-size: 22px; }
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+  .lightbox-close { top: 12px; right: 12px; }
 }
 
 /* Contact */
