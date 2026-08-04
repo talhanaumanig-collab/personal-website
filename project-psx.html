@@ -88,15 +88,15 @@
     <div class="value-grid">
       <div class="value-card">
         <div class="label">The problem</div>
-        <p>Retail investors on the Pakistan Stock Exchange don't have anything like a standardised risk score. Financial data is scattered across a live pricing terminal, a separate data portal for quarterly figures, and PDF annual reports, with no single source giving the full picture.</p>
+        <p>When I wanted to invest in Pakistani stocks, I ran into a wall almost immediately: there is no single place that tells you whether a company is actually a safe bet. The numbers I needed were split across a live pricing terminal, a separate portal for quarterly filings, and PDF annual reports that take forever to read properly, and even then there was no consistent way to compare one company's risk against another's. Making a real decision meant hours of manual digging, or worse, a guess.</p>
       </div>
       <div class="value-card">
         <div class="label">The approach</div>
-        <p>Scrapes and cross-verifies company financials from multiple official sources, catching real bugs along the way (one source reports figures in thousands, silently understating results 1000x if not rescaled). Scores each company across Valuation, Financial Health, and Growth pillars using industrial or bank-specific templates, then generates a narrative report where every sentence is assembled directly from a number the scoring engine already computed.</p>
+        <p>So I built a tool that does that digging for me, automatically and rigorously. It pulls a company's financials from multiple official sources and cross-checks them against each other. It once caught a real error where one source was silently understating a company's numbers by 1000x. It then scores the company across three pillars, Valuation, Financial Health, and Growth, using the kind of framework equity analysts actually use, adjusted depending on whether it is an industrial company or a bank. Every sentence in the final report is generated directly from a number the tool itself computed, not written by an AI or guessed at, so there is nothing in it that could be hallucinated.</p>
       </div>
       <div class="value-card">
         <div class="label">The result</div>
-        <p>A live Streamlit app that builds a full report, gauge score, five-year trend, quarterly financials, catalysts, risks, and linked source documents, in under 20 seconds, entirely free to run: no LLM, no API key, no subscription.</p>
+        <p>Now, instead of hours of manual digging, I get a complete, trustworthy risk report on any Pakistani stock in under 20 seconds: one risk score, a five-year financial trend, the catalysts and risks that actually matter, and links straight to the source documents if I want to check anything myself. It costs nothing to run, no subscription and no API key, and I trust every number in it because I can see exactly where it came from.</p>
       </div>
     </div>
 
